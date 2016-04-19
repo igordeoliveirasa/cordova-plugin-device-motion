@@ -141,6 +141,8 @@ public class AccelListener extends CordovaPlugin implements SensorEventListener 
     */
     private int start() {
         // If already starting or running, then restart timeout and return
+        this.accuracy = SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM;
+
         if ((this.status == AccelListener.RUNNING) || (this.status == AccelListener.STARTING)) {
             startTimeout();
             return this.status;
